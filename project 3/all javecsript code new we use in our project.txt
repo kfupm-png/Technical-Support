@@ -1,0 +1,8 @@
+
+
+
+event.preventDefault() is a method in JavaScript that prevents the default behavior of an event from happening. This is useful when you want to override or control the standard action associated with a particular event.
+
+
+
+The statement .style.display = 'block'; in JavaScript is used to change the CSS display property of an HTML element to block, which makes the element visible and forces it to take up the full width of its parent container.
