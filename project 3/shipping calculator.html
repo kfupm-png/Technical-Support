@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Charge Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, select {
+            padding: 8px;
+            width: 100%;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <link rel="shortcut icon" href="image.png">
+    <p id='Pp'> <a href="main mneu.html">Return to main page </a> </p>
+
+    <h1>Shipping Charge Calculator</h1>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="weight">Weight (in kg)</label>
+            <input type="number" id="weight" placeholder="Enter weight" required>
+        </div>
+        <div class="form-group">
+            <label for="distance">Distance (in km)</label>
+            <input type="number" id="distance" placeholder="Enter distance" required>
+        </div>
+        <div class="form-group">
+            <label for="service">Shipping Type:</label>
+            <select id="service">
+                <option value="regular">Regular</option>
+                <option value="express">Express</option>
+            </select>
+        </div>
+
+        <button onclick="calculateShipping()">Calculate Shipping</button>
+
+        <h2>Result</h2>
+        <table id="result-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Weight (kg)</th>
+                    <th>Distance (km)</th>
+                    <th>Shipping Type</th>
+                    <th>Total Cost (Currency)</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function calculateShipping() {
+            
+            var weight = parseFloat(document.getElementById('weight').value);
+            var distance = parseFloat(document.getElementById('distance').value);
+            var service = document.getElementById('service').value;
+
+            
+            if (isNaN(weight) || isNaN(distance)) {
+                alert("Please enter valid values for weight and distance.");
+                return;
+            }
+
+           
+            var baseRate = 5;  
+            var cost = weight * distance * baseRate;
+
+            
+            if (service === "express") {
+                cost *= 1.5;  
+            }
+
+            
+            var table = document.getElementById('result-table');
+            table.style.display = 'block'; 
+
+            var newRow = table.getElementsByTagName('tbody')[0].insertRow();
+            newRow.insertCell(0).innerText = weight + " kg";
+            newRow.insertCell(1).innerText = distance + " km";
+            newRow.insertCell(2).innerText = service === "express" ? "Express" : "Regular";
+            newRow.insertCell(3).innerText = cost.toFixed(2) + " Currency"; }
+    </script>
+
+</body>
+</html>

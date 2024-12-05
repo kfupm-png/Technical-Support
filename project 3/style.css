@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+
+@media only screen and (max-width:740px){
+   .Menu{display: none;}
+        .Menu a{display: block;}
+        .Menu a img{display: none;}
+        section{ height: 250px;}
+           nav a{font-size: 14px;}
+        nav{width: 35%;}
+        nav{float: right;}
+        .Menu{float: right;}
+        .Menu{text-align: center; }
+        .Menu{position: fixed;}
+        .Menu{top: 6.3em;}
+        .Menu{right: 20px;}
+        .Menu{padding: 5px;}
+        label{cursor: pointer;}
+        #toggle:checked + .Menu{display: block;}
+    }
+
+.header {
+    background-image: url('your-header-image-url.jpg'); 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: black;
+    padding: 100px;
+}
+
+.header .logo h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.navbar {
+    background-color: rgb(44, 44, 44);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navbar ul li a:hover {
+    color: gray;
+}
+
+article {
+    background-image: url('head_bg.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    padding: 20px;
+    margin-bottom: 60px;
+    
+}
+ 
+article h2,p{
+    color: white;
+}
+
+.footer {
+    background-image: url('image f.png'); 
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px;
+    color: white;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+#Pp {
+    text-align: right;
+    padding: 5px;
+    background: white;
+    float: right;
+    margin-right: 1%;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+}
